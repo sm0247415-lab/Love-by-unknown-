@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download APK</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Download APK</h1>
+</header>
+
+<main>
+  <div id="download-section">
+    <p>Click button to download your APK</p>
+    <a id="apk-btn" href="#" download class="download-btn">Download APK</a>
+  </div>
+</main>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const apkName = urlParams.get('apk');
+
+if (apkName) {
+  document.getElementById('apk-btn').href = 'assets/apks/' + apkName;
+  document.getElementById('apk-btn').innerText = `Download ${apkName}`;
+}
+</script>
+</body>
+</html>
